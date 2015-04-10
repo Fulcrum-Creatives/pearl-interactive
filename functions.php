@@ -30,3 +30,21 @@ if ( !defined( 'FCWPF_STYLESHEETURI' ) ) {
 if ( !defined( 'FCWPF_DIR' ) ) {
   define( 'FCWPF_DIR', get_template_directory() );
 }
+
+/* Theme Setup
+================================================================================*/
+if( !function_exists( 'fcwpf_theme_support' ) ) :
+	function fcwpf_theme_support() {
+		// Load taxdomain
+		load_theme_textdomain( FCWPF_TAXDOMAIN, get_template_directory() . '/languages' );
+	    // Title Tage Support
+	    add_theme_support( 'title-tag' );
+	    // Post Thumbnails
+	    add_theme_support( 'post-thumbnails' );
+	    // Register Nav Menus*/
+	    register_nav_menus( array(
+	        'primary' => __( 'Primary', FCWPF_TAXDOMAIN ),
+	    ) );
+	}
+	add_action( 'after_setup_theme', 'fcwpf_theme_support' );
+endif;
