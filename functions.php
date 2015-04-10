@@ -54,7 +54,7 @@ endif;
 class fc_wp_walker_nav_menu extends Walker_Nav_Menu {
 	  
 	// add classes to ul sub-menus
-	function start_lvl( &$output, $depth ) {
+	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 	    // depth dependent classes
 	    $indent = ( $depth > 0  ? str_repeat( "\t", $depth ) : '' ); // code indent
 	    $display_depth = ( $depth + 1); // because it counts the first submenu as 0
@@ -69,9 +69,9 @@ class fc_wp_walker_nav_menu extends Walker_Nav_Menu {
 	}
 	  
 	// add main/sub classes to li's and links
-	function start_el( &$output, $item, $depth, $args ) {
-	    $indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' ); // code indent
-	  	$display_depth = ( $depth + 1); // because it counts the first submenu as 0
+	public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+	    $indent = ( $depth > 0 ? str_repeat( "\t", $depth ) : '' );
+	  	$display_depth = ( $depth + 1);
 	    // depth dependent classes
 	    $depth_classes = array(
 	        ( $depth == 0 ? 'main-menu-item' : 'sub-menu-item' ),
@@ -79,8 +79,7 @@ class fc_wp_walker_nav_menu extends Walker_Nav_Menu {
 	        'menu-item-' . strtolower( str_replace( ' ', '-', $item->title ) )
 	    );
 	    $depth_class_names = esc_attr( implode( ' ', $depth_classes ) );
-	  
-	    // passed classes
+	 
 	    $classes = empty( $item->classes ) ? array() : (array) $item->classes;
 	    $class_names = esc_attr( implode( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item ) ) );
 	  
