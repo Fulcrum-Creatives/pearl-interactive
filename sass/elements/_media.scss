@@ -1,0 +1,14 @@
+/* Media
+================================================================================*/
+img,
+video,
+iframe,
+object,
+embed  {
+	max-width: 100%;
+	height: auto;
+}
+
+.media__wrapper {
+	@include aspect-ratio(16, 9)
+}
