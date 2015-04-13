@@ -10,4 +10,6 @@
 <!--[if lt IE 9]>
 	<script src="<?php echo apply_filters( "fc_wp_html5_js_path", esc_url( get_template_directory_uri() ) . "/js/vendor/html5.js" ); ?>"></script>
 <![endif]-->
-</head><?php echo "\n"; ?>
+</head>
+<body <?php body_class(); ?>>
+<a href="#main" class="skip-nav screen-reader-text"><?php _e('Skip to main Content', FCWPF_TAXDOMAIN); ?></a><?php echo "\n"; ?>
