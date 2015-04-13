@@ -9,6 +9,15 @@ get_template_part( 'includes/head' );
 		<div class="header__logo">
             <?php get_template_part( 'includes/logo' ); ?>
         </div>
+        <div class="mobile__contact button__one">
+        	<a href="<?php echo home_url(); ?>/contact/">
+        		<?php _e( 'Contact', FCWPF_TAXDOMAIN ); ?>
+        	</a>
+        </div>
+        <?php if( has_nav_menu( 'primary' ) ) : wp_nav_menu( $primary_args ); endif; ?>
 	</div>
+	<figure class="heroimage">
+		<figcaption>
+		</figcaption>
+	</figure>
 </header>
-<?php if( has_nav_menu( 'primary' ) ) : wp_nav_menu( $primary_args ); endif; ?>

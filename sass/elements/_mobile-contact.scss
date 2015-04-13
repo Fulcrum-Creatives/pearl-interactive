@@ -1,0 +1,26 @@
+/* Mobile Contact Button
+================================================================================*/
+.mobile__contact {
+	float: right;
+	display: block;
+	position: relative;
+	width: 96px;
+	height: 43px;
+	text-align: center;
+	line-height: 2.5em;
+	margin-right: 15px;
+	@include media-query(480px) {
+		top: 21px;
+	}
+	@include media-query(768px) {
+		display: none;
+	}
+	a {
+		color: #fff;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}

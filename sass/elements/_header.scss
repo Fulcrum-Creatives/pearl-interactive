@@ -1,0 +1,16 @@
+/* Header
+================================================================================*/
+.body__header  {
+	height: auto;
+	background-color: transparent;
+	@include media-query(768px) {
+		height: 470px;
+		background-color: $purple;
+	}
+	.body__content {
+		padding: 0;
+		@include media-query(768px) {
+			padding: 0 15px;
+		}
+	}
+}

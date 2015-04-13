@@ -1,0 +1,11 @@
+/* buttons
+================================================================================*/
+.button__one {
+	background-color: $lt_green;
+	border-bottom: 5px solid $yellow;
+	text-transform: lowercase;
+	letter-spacing: 1px;
+	a {
+		color: #fff;
+	}
+}

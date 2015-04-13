@@ -302,6 +302,7 @@ body {
 ================================================================================*/
 a {
   color: #333;
+  text-decoration: none;
 }
 a:visited {
   color: #333;
@@ -344,6 +345,27 @@ embed {
   bottom: 0;
 }
 
+/* Header
+================================================================================*/
+.body__header {
+  height: auto;
+  background-color: transparent;
+}
+@media screen and (min-width: 768px) {
+  .body__header {
+    height: 470px;
+    background-color: #784ea0;
+  }
+}
+.body__header .body__content {
+  padding: 0;
+}
+@media screen and (min-width: 768px) {
+  .body__header .body__content {
+    padding: 0 15px;
+  }
+}
+
 /* Menu Icon
 ================================================================================*/
 .menu__icon {
@@ -380,56 +402,88 @@ embed {
 
 /* Nav Menu
 ================================================================================*/
+.nav {
+  float: none;
+  clear: both;
+  background-color: #784ea0;
+  height: 43px;
+  line-height: 3em;
+  position: relative;
+  top: auto;
+}
+.nav a {
+  color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .nav {
+    float: right;
+    clear: none;
+    background-color: transparent;
+    top: 24px;
+  }
+}
+
 .nav__menu {
   list-style-type: none;
   padding: 0;
-  display: none;
 }
 .nav__menu ul {
   list-style-type: none;
   padding: 0;
 }
-.nav__menu.horizontal.right {
-  margin: 0;
-  text-align: right;
-}
-.nav__menu.horizontal.right li {
-  margin: 0;
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-}
-.nav__menu.horizontal.left {
-  margin: 0;
-  text-align: left;
-}
-.nav__menu.horizontal.left li {
-  margin: 0;
-  display: inline-block;
-  *display: inline;
-  zoom: 1;
-}
-.nav__menu.horizontal.center {
+.nav__menu.horizontal {
   margin: 0;
   text-align: center;
 }
-.nav__menu.horizontal.center li {
+.nav__menu.horizontal li {
   margin: 0;
   display: inline-block;
   *display: inline;
   zoom: 1;
+}
+@media screen and (min-width: 768px) {
+  .nav__menu.horizontal {
+    margin: 0;
+    text-align: right;
+  }
+  .nav__menu.horizontal li {
+    margin: 0;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+  }
 }
 .nav__menu.horizontal li {
   vertical-align: top;
 }
-
-/* Mobile Menu
-================================================================================*/
+.nav__menu.horizontal .menu-item-contact {
+  display: none;
+}
 @media screen and (min-width: 768px) {
-  .nav__menu {
-    display: block;
+  .nav__menu.horizontal .menu-item-contact {
+    display: inline-block;
   }
 }
+.nav__menu li {
+  height: 43px;
+  position: relative;
+}
+.nav__menu li a {
+  height: 43px;
+  padding: 0 0.5em;
+  display: block;
+}
+@media screen and (min-width: 480px) {
+  .nav__menu li a {
+    padding: 0 1.5em;
+  }
+}
+@media screen and (min-width: 960px) {
+  .nav__menu li a {
+    padding: 0 2.5em;
+  }
+}
+
 /* Logo
 ================================================================================*/
 .site__logo {
@@ -437,10 +491,78 @@ embed {
   height: 100%;
   background-repeat: no-repeat;
   background-position: center center;
+  background-size: cover;
   margin: 0;
 }
 
 .header__logo {
-  width: 192px;
-  height: 86px;
+  width: 96px;
+  height: 43px;
+  float: left;
+  margin-left: 15px;
+}
+@media screen and (min-width: 480px) {
+  .header__logo {
+    width: 192px;
+    height: 86px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .header__logo {
+    margin-left: 0;
+  }
+}
+
+/* Mobile Contact Button
+================================================================================*/
+.mobile__contact {
+  float: right;
+  display: block;
+  position: relative;
+  width: 96px;
+  height: 43px;
+  text-align: center;
+  line-height: 2.5em;
+  margin-right: 15px;
+}
+@media screen and (min-width: 480px) {
+  .mobile__contact {
+    top: 21px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mobile__contact {
+    display: none;
+  }
+}
+.mobile__contact a {
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+/* buttons
+================================================================================*/
+.button__one {
+  background-color: #9fbc26;
+  border-bottom: 5px solid #b8e027;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+}
+.button__one a {
+  color: #fff;
+}
+
+/* Layout
+================================================================================*/
+.body__content {
+  width: 1255px;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  padding: 0 15px;
 }

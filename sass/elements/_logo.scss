@@ -5,9 +5,19 @@
 	height: 100%;
 	background-repeat: no-repeat;
 	background-position: center center;
+	background-size: cover;
 	margin: 0;
 }
 .header__logo {
-	width: 192px;
-	height: 86px;
+	width: 96px;
+	height: 43px;
+	float: left;
+	margin-left: 15px;
+	@include media-query(480px) {
+		width: 192px;
+		height: 86px;
+	}
+	@include media-query(768px) {
+		margin-left: 0;
+	}
 }
