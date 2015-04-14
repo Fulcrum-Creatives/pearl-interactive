@@ -12,16 +12,17 @@ $aside-width: span(3);
 // Colors
 //================================================================================
 // text colors
-$color__font: #333;
-$color__header: #333;
+$color__font: #5b5c60;
+$color__header: #803e96;
 // link colors
-$color__link: #333;
-$color__link-hover: #333;
-$color__link-visited: #333;
+$color__link: #6d6e72;
+$color__link-hover: darken($color__link, 15%);
+$color__link-visited: $color__link;
 // color pallete
 $purple: #784ea0;
 $lt_green: #9fbc26;
 $yellow: #b8e027;
+$pale_yellow: #f9fbed;
 $orange: #ff7415;
 
 

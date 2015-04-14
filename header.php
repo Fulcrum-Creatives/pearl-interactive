@@ -16,8 +16,14 @@ get_template_part( 'includes/head' );
         </div>
         <?php if( has_nav_menu( 'primary' ) ) : wp_nav_menu( $primary_args ); endif; ?>
 	</div>
-	<figure class="heroimage">
-		<figcaption>
-		</figcaption>
-	</figure>
+	<?php if( is_home() || is_front_page() ) : ?>
+		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+			<figure class="heroimage">
+				<img src="<?php echo $heroimage_url; ?>" alt="<?php echo $heroimage_alt; ?>">
+				<figcaption>
+					<span><?php echo $heroimage_caption; ?></span>
+				</figcaption>
+			</figure>
+		<?php endwhile; endif; wp_reset_postdata(); ?>
+	<?php endif; ?>
 </header>

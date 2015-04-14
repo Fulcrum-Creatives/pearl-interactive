@@ -1,0 +1,17 @@
+/* Fonts
+================================================================================*/
+.roboto {
+	font-family: 'Roboto', sans-serif;
+	font-weight: normal;
+}
+.roboto-bold {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+}
+.roboto-slab {
+	font-family: 'Roboto Slab', serif;
+}
+strong,
+b {
+	@extend .roboto-bold;
+}

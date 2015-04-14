@@ -9,3 +9,39 @@
 		color: #fff;
 	}
 }
+.button__two {
+	@extend .button__one;
+	text-transform: uppercase;
+	  padding: 0.3em 0 0.6em;
+	color: #fff;
+	display: block;
+}
+.fp-box__button {
+	max-width: 310px;
+	text-align: center;
+	span {
+		display: inline-block;
+		background-image: url("images/icons.png");
+		background-repeat: no-repeat;
+		width: 25px;
+		height: 25px;
+		position: relative;
+		top: 5px;
+		margin: 0 5px 0;
+	}
+}
+.fp-box__button-1 {
+	span {
+		background-position: 0px 0px;
+	}
+}
+.fp-box__button-2 {
+	span {
+		background-position: 0px -25px;
+	}
+}
+.fp-box__button-3 {
+	span {
+		background-position: 0px -50px;
+	}
+}

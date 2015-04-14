@@ -3,14 +3,25 @@
 .body__header  {
 	height: auto;
 	background-color: transparent;
+	position: relative;
+	margin-top: 0.5em;
 	@include media-query(768px) {
 		height: 470px;
-		background-color: $purple;
+		margin-top: 0;
 	}
 	.body__content {
 		padding: 0;
+		z-index: 2;
 		@include media-query(768px) {
 			padding: 0 15px;
+		}
+	}
+}
+.not-homepage {
+	.body__header  {
+		@include media-query(768px) {
+			background-color: $purple;
+			background-image: url('images/header-bg.png');
 		}
 	}
 }

@@ -1,0 +1,57 @@
+/* Pages
+================================================================================*/
+.is-homepage {
+	main {
+		width: 100%;
+		margin: 0;
+	}
+}
+.not-homepage {
+	main {
+		top: -295px;
+		border-radius: none;
+		padding: 4em 15px;
+		min-height: 295px;
+		position: relative;
+		background-color: #fff;
+		@include media-query(768px) {
+			border-top-left-radius: 25px;
+			border-top-right-radius: 25px;
+		}
+	}
+}
+.col-sm {
+	width: 100%;
+	overflow: hidden;
+	padding: 4em 0;
+	.body__content {
+		width: 1255px;
+		margin: 0 auto;
+	}
+	p {
+		@include font-size(21);
+	}
+}
+.col-sm_left ,
+.col-sm_right {
+	max-width: 450px;
+}
+.col-sm_left {
+	float: left;
+}
+.col-sm_right {
+	float: right;
+}
+.fp-box__two {
+	background-color: $pale_yellow;
+}
+.fp-box__heading {
+	@include font-size(65);
+	text-transform: lowercase;
+	text-align: left;
+	margin: 0;
+}
+.fp-box__sub-heading {
+	@include font-size(31);
+	margin: 0;
+}

@@ -118,7 +118,7 @@ svg:not(:root) {
 }
 
 figure {
-  margin: 1em 40px;
+  margin: 0;
 }
 
 hr {
@@ -245,6 +245,33 @@ th {
 @viewport {
   width: device-width;
 }
+/* Layout
+================================================================================*/
+.body__content {
+  width: 1255px;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fonts
+================================================================================*/
+.roboto {
+  font-family: 'Roboto', sans-serif;
+  font-weight: normal;
+}
+
+.roboto-bold, strong,
+b {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.roboto-slab {
+  font-family: 'Roboto Slab', serif;
+}
+
 /* Base
 ================================================================================*/
 html {
@@ -260,6 +287,14 @@ html {
 body {
   font-size: 16px;
   font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  color: #5b5c60;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 700;
+  color: #803e96;
 }
 
 /* Accessibility
@@ -301,14 +336,18 @@ body {
 /* Links
 ================================================================================*/
 a {
-  color: #333;
+  color: #6d6e72;
   text-decoration: none;
+  -webkit-transition: color 0.5s ease;
+          transition: color 0.5s ease;
 }
 a:visited {
-  color: #333;
+  color: #6d6e72;
 }
 a:hover, a:focus, a:active {
-  color: #333;
+  -webkit-transition: color 0.5s ease;
+          transition: color 0.5s ease;
+  color: #48484b;
 }
 a:focus {
   outline: thin dotted;
@@ -345,20 +384,136 @@ embed {
   bottom: 0;
 }
 
+/* Pages
+================================================================================*/
+.is-homepage main {
+  width: 100%;
+  margin: 0;
+}
+
+.not-homepage main {
+  top: -295px;
+  border-radius: none;
+  padding: 4em 15px;
+  min-height: 295px;
+  position: relative;
+  background-color: #fff;
+}
+@media screen and (min-width: 768px) {
+  .not-homepage main {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+  }
+}
+
+.col-sm {
+  width: 100%;
+  overflow: hidden;
+  padding: 4em 0;
+}
+.col-sm .body__content {
+  width: 1255px;
+  margin: 0 auto;
+}
+.col-sm p {
+  font-size: 21px;
+  font-size: 1.3125em;
+}
+
+.col-sm_left,
+.col-sm_right {
+  max-width: 450px;
+}
+
+.col-sm_left {
+  float: left;
+}
+
+.col-sm_right {
+  float: right;
+}
+
+.fp-box__two {
+  background-color: #f9fbed;
+}
+
+.fp-box__heading {
+  font-size: 65px;
+  font-size: 4.0625em;
+  text-transform: lowercase;
+  text-align: left;
+  margin: 0;
+}
+
+.fp-box__sub-heading {
+  font-size: 31px;
+  font-size: 1.9375em;
+  margin: 0;
+}
+
+/* buttons
+================================================================================*/
+.button__one, .button__two {
+  background-color: #9fbc26;
+  border-bottom: 5px solid #b8e027;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+}
+.button__one a, .button__two a {
+  color: #fff;
+}
+
+.button__two {
+  text-transform: uppercase;
+  padding: 0.3em 0 0.6em;
+  color: #fff;
+  display: block;
+}
+
+.fp-box__button {
+  max-width: 310px;
+  text-align: center;
+}
+.fp-box__button span {
+  display: inline-block;
+  background-image: url("images/icons.png");
+  background-repeat: no-repeat;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  top: 5px;
+  margin: 0 5px 0;
+}
+
+.fp-box__button-1 span {
+  background-position: 0px 0px;
+}
+
+.fp-box__button-2 span {
+  background-position: 0px -25px;
+}
+
+.fp-box__button-3 span {
+  background-position: 0px -50px;
+}
+
 /* Header
 ================================================================================*/
 .body__header {
   height: auto;
   background-color: transparent;
+  position: relative;
+  margin-top: 0.5em;
 }
 @media screen and (min-width: 768px) {
   .body__header {
     height: 470px;
-    background-color: #784ea0;
+    margin-top: 0;
   }
 }
 .body__header .body__content {
   padding: 0;
+  z-index: 2;
 }
 @media screen and (min-width: 768px) {
   .body__header .body__content {
@@ -366,38 +521,11 @@ embed {
   }
 }
 
-/* Menu Icon
-================================================================================*/
-.menu__icon {
-  padding: 3px;
-  width: 33px;
-  height: 33px;
-  border: 1px solid #333;
-  border-radius: 5px;
-}
-.menu__icon .inner {
-  width: 100%;
-  height: 6px;
-  background-color: #333;
-  border-radius: 6px;
-  position: relative;
-}
-.menu__icon .inner:after, .menu__icon .inner:before {
-  content: '';
-  width: 100%;
-  height: 6px;
-  background-color: #333;
-  border-radius: 6px;
-  position: absolute;
-}
-.menu__icon .inner:after {
-  top: 9px;
-}
-.menu__icon .inner:before {
-  top: 18px;
-}
-.menu__icon:hover {
-  cursor: pointer;
+@media screen and (min-width: 768px) {
+  .not-homepage .body__header {
+    background-color: #784ea0;
+    background-image: url("images/header-bg.png");
+  }
 }
 
 /* Nav Menu
@@ -410,9 +538,13 @@ embed {
   line-height: 3em;
   position: relative;
   top: auto;
+  margin-top: 3.2em;
 }
 .nav a {
   color: #fff;
+}
+.nav a:hover {
+  color: #48484b;
 }
 @media screen and (min-width: 768px) {
   .nav {
@@ -420,6 +552,9 @@ embed {
     clear: none;
     background-color: transparent;
     top: 24px;
+    margin-top: 0;
+    font-size: 18px;
+    font-size: 1.125em;
   }
 }
 
@@ -478,11 +613,6 @@ embed {
     padding: 0 1.5em;
   }
 }
-@media screen and (min-width: 960px) {
-  .nav__menu li a {
-    padding: 0 2.5em;
-  }
-}
 
 /* Logo
 ================================================================================*/
@@ -500,6 +630,7 @@ embed {
   height: 43px;
   float: left;
   margin-left: 15px;
+  padding: 1px;
 }
 @media screen and (min-width: 480px) {
   .header__logo {
@@ -511,6 +642,15 @@ embed {
   .header__logo {
     margin-left: 0;
   }
+}
+.header__logo a {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+.header__logo a:focus {
+  outline-color: #fff;
 }
 
 /* Mobile Contact Button
@@ -544,25 +684,56 @@ embed {
   bottom: 0;
 }
 
-/* buttons
+/* Hero Image
 ================================================================================*/
-.button__one {
-  background-color: #9fbc26;
-  border-bottom: 5px solid #b8e027;
-  text-transform: lowercase;
-  letter-spacing: 1px;
-}
-.button__one a {
-  color: #fff;
-}
-
-/* Layout
-================================================================================*/
-.body__content {
-  width: 1255px;
-  max-width: 100%;
-  margin: 0 auto;
+.heroimage {
+  width: 100%;
+  height: 153px;
   overflow: hidden;
   position: relative;
-  padding: 0 15px;
+  z-index: 1;
+}
+@media screen and (min-width: 480px) {
+  .heroimage {
+    height: 250px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .heroimage {
+    height: 470px;
+    position: absolute;
+    top: 0px;
+  }
+}
+.heroimage img {
+  width: 100%;
+  height: auto;
+}
+.heroimage figcaption {
+  position: absolute;
+  top: 37%;
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 21px;
+  font-size: 1.3125em;
+}
+@media screen and (min-width: 480px) {
+  .heroimage figcaption {
+    font-size: 31px;
+    font-size: 1.9375em;
+    top: 42%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .heroimage figcaption {
+    font-size: 51px;
+    font-size: 3.1875em;
+    top: 50%;
+  }
+}
+.heroimage figcaption span {
+  display: inline-block;
+  border-bottom: 5px solid #b8e027;
 }

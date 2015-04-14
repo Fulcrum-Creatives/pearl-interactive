@@ -10,14 +10,23 @@ html {
 }
 body {
 	@include font-size($font-size__base, rem);
+	font-family: 'Roboto', sans-serif;
+	color: $color__font;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto Slab', serif;
+	font-weight: 700;
+	color: $color__header;
 }
 @import "elements/accessibility";
 @import "elements/alignments";
 @import "elements/links";
 @import "elements/media";
+@import "elements/pages";
+@import "elements/buttons";
 @import "elements/header";
-@import "elements/menu-icon";
+//@import "elements/menu-icon";
 @import "elements/menu";
 @import "elements/logo";
 @import "elements/mobile-contact";
-@import "elements/buttons";
+@import "elements/hero-image";

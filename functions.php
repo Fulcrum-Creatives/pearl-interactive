@@ -61,6 +61,9 @@ if( !function_exists( 'fcwpf_load_stylesheets' ) ) :
 		// Load the Internet Explorer 7 specific stylesheet.
 		wp_enqueue_style( 'fc-wp-ie9-style', FCWPF_URI . '/css/ie9.style.css', array( 'fc-wp-style' ), '1.0.0' );
 		wp_style_add_data( 'fc-wp-ie9-style', 'conditional', 'if IE 9' );
+		// Google Fonts
+		// Load the main stylesheet.
+		wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Roboto:400,700,500|Roboto+Slab:400,7…' );
 	}
 	add_action( 'wp_enqueue_scripts', 'fcwpf_load_stylesheets' );
 endif;
@@ -133,3 +136,17 @@ class fc_wp_walker_nav_menu extends Walker_Nav_Menu {
 	    $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 	}
 }
+
+/* Extend Body Class
+================================================================================*/
+if( !function_exists( 'extend_body_class' ) ) :
+	function extend_body_class( $classes ) {
+		if( is_home() || is_front_page() ) {
+			$classes[] = "is-homepage";
+		} else {
+			$classes[] = 'not-homepage';
+		}
+		return $classes;
+	}
+	add_action( 'body_class', 'extend_body_class' );
+endif;
