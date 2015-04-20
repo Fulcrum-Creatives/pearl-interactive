@@ -3,8 +3,6 @@
 Template Name: Home
 */
 get_header();
-/* Homepage Boxes
-================================================================================*/
 $pearl_box_1_title    = ( get_field( 'pearl_box_1_title' ) ? get_field( 'pearl_box_1_title' ) : '' );
 $pearl_box_1_subtitle = ( get_field( 'pearl_box_1_subtitle' ) ? get_field( 'pearl_box_1_subtitle' ) : '' );
 $pearl_box_1_text     = ( get_field( 'pearl_box_1_text' ) ? get_field( 'pearl_box_1_text' ) : '' );
@@ -35,7 +33,7 @@ $pearl_box_3_link_text     = ( get_field( 'pearl_box_3_link_text' ) ? get_field(
 					<?php echo $pearl_box_1_subtitle; ?>
 				</h4>
 				<?php echo $pearl_box_1_text; ?>
-				<a href="<?php echo $pearl_box_1_link; ?>" class="fp-box__button fp-box__button-1 button__two">
+				<a href="<?php echo $pearl_box_1_link; ?>" class="fp-box__button fp-box__button-1 button__two" rel="bookmark">
 					<span></span><?php echo $pearl_box_1_link_text; ?>
 				</a>
 			</div>
@@ -53,7 +51,7 @@ $pearl_box_3_link_text     = ( get_field( 'pearl_box_3_link_text' ) ? get_field(
 					<?php echo $pearl_box_2_subtitle; ?>
 				</h4>
 				<?php echo $pearl_box_2_text; ?>
-				<a href="<?php echo $pearl_box_2_link; ?>" class="fp-box__button fp-box__button-2 button__two">
+				<a href="<?php echo $pearl_box_2_link; ?>" class="fp-box__button fp-box__button-2 button__two" rel="bookmark">
 					<span></span><?php echo $pearl_box_2_link_text; ?>
 				</a>
 			</div>
@@ -71,7 +69,7 @@ $pearl_box_3_link_text     = ( get_field( 'pearl_box_3_link_text' ) ? get_field(
 					<?php echo $pearl_box_3_subtitle; ?>
 				</h4>
 				<?php echo $pearl_box_3_text; ?>
-				<a href="<?php echo $pearl_box_3_link; ?>" class="fp-box__button fp-box__button-3 button__two">
+				<a href="<?php echo $pearl_box_3_link; ?>" class="fp-box__button fp-box__button-3 button__two" rel="bookmark">
 					<span></span><?php echo $pearl_box_3_link_text; ?>
 				</a>
 			</div>

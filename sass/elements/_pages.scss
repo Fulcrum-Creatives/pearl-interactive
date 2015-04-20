@@ -23,7 +23,7 @@
 .col-sm {
 	width: 100%;
 	overflow: hidden;
-	padding: 4em 0;
+	padding: 4em 15px;
 	.body__content {
 		width: 1255px;
 		margin: 0 auto;
@@ -34,13 +34,19 @@
 }
 .col-sm_left ,
 .col-sm_right {
-	max-width: 450px;
+	max-width: 100%;
+	@include media-query(945px) {
+		max-width: 450px;
+	}
 }
 .col-sm_left {
 	float: left;
 }
 .col-sm_right {
-	float: right;
+	float: left;
+	@include media-query(945px) {
+		float: right;
+	}
 }
 .fp-box__two {
 	background-color: $pale_yellow;

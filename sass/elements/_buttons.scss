@@ -12,9 +12,14 @@
 .button__two {
 	@extend .button__one;
 	text-transform: uppercase;
-	  padding: 0.3em 0 0.6em;
+	padding: 0.3em 0 0.6em;
 	color: #fff;
 	display: block;
+	a {
+		&:visited {
+			color: #fff;
+		}
+	}
 }
 .fp-box__button {
 	max-width: 310px;

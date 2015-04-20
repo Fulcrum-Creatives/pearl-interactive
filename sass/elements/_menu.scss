@@ -51,10 +51,38 @@
 		position: relative;
 		a {
 			height: 43px;
-			padding: 0 0.5em;
+			padding: 0 0.2em;
 			display: block;
 			@include media-query(480px) {
 				padding: 0 1.5em;
+			}
+		}
+	}
+}
+.body__footer {
+	.nav {
+		float: none;
+		background-color: transparent;
+		margin-top: 0;
+		line-height: 4em;
+		a {
+			color: darken($color__font, 25%);
+		}
+		@include media-query(768px) {
+			float: none;
+			top: auto;
+			@include font-size(21);
+			line-height: 3em;
+		}
+	}
+	.nav__menu {
+		&.horizontal {
+			@include hor-list-pos(center);
+			.menu-item-contact {
+				display: none;
+				@include media-query(768px) {
+					display: inline-block;
+				}
 			}
 		}
 	}

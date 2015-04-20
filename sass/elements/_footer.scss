@@ -1,0 +1,52 @@
+/* Footer
+================================================================================*/
+.footer__widgetsarea,
+.body__footer {
+	border-top: 4px solid $orange;
+	padding: 4em 15px;
+}
+.body__footer {
+	border-top: 4px solid $orange;
+	padding: 4em 15px 0;
+}
+.footer__info {
+	text-transform: uppercase;
+	text-align: center;
+	margin: 2.5em 0 0;
+	padding: 0;
+	@include font-size(15);
+	li {
+		display: block;
+		border-right: none;
+		padding: 0;
+		margin-bottom: 0.5em;
+		@include media-query(900px) {
+			display: inline-block;
+			border-right: 1px solid;
+			padding: 1px 9px 1px 4px;
+		}
+		&:last-child {
+			border-right: none;
+		}
+	}
+	address {
+		font-style: normal;
+	}
+}
+.footer_social {
+	text-align: center;
+	padding: 0;
+	margin: 1.5em 0 0;
+	li {
+		display: inline-block;
+		margin-bottom: 0.5em;
+		margin-right: 1em;
+		line-height: 4em;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	i {
+		@include font-size(37);
+	}
+}

@@ -62,8 +62,9 @@ if( !function_exists( 'fcwpf_load_stylesheets' ) ) :
 		wp_enqueue_style( 'fc-wp-ie9-style', FCWPF_URI . '/css/ie9.style.css', array( 'fc-wp-style' ), '1.0.0' );
 		wp_style_add_data( 'fc-wp-ie9-style', 'conditional', 'if IE 9' );
 		// Google Fonts
-		// Load the main stylesheet.
 		wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Roboto:400,700,500|Roboto+Slab:400,7…' );
+		// Font Awesome
+		wp_enqueue_style( 'fonts-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' ); 
 	}
 	add_action( 'wp_enqueue_scripts', 'fcwpf_load_stylesheets' );
 endif;
