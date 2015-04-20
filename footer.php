@@ -1,6 +1,6 @@
-<section class="footer__widgetsarea body__content">
+<aside class="footer__widgetsarea body__content" role="complementary">
 	<p>widgets</p>
-</section>
+</aside>
 <footer class="body__footer body__content" role="contentinfo">
 	<?php get_template_part( 'includes/primaryMenu' ); ?>
 	<?php

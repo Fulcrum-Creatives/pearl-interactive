@@ -7,3 +7,29 @@
 	overflow: hidden;
 	position: relative;
 }
+.content__main {
+	float: none;
+	width: 100%;
+	position: relative;
+	@include media-query(768px) {
+		float: left;
+		width: 65%;
+	}
+}
+.content__sidebar {
+	float: none;
+	width: 100%;
+	position: relative;
+	@include media-query(768px) {
+		float: left;
+		width: 35%;
+	}
+}
+.post__date-col {
+	position: absolute;
+	width: 80px;
+}
+.post__content {
+	border-left: 80px solid #fff;
+	overflow: hidden;
+}

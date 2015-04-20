@@ -151,3 +151,58 @@ if( !function_exists( 'extend_body_class' ) ) :
 	}
 	add_action( 'body_class', 'extend_body_class' );
 endif;
+
+/* Sidebar Widget Area
+===============================================================================*/
+function register_custom_sidebars() {
+    if( ! function_exists( register_sidebar() ) ) {
+        register_sidebar( array(
+            'name'          => __( 'Sidebar', FCWPF_TAXDOMAIN ),
+            'id'            => 'sidebar',
+            'description'   => '',
+            'class'         => '',
+            'before_widget' => '<li id="%1$s" class="widget %2$s">',
+            'after_widget'  => '</li>',
+            'before_title'  => '<h2 class="widgettitle">',
+            'after_title'   => '</h2>'
+        ));
+        unregister_sidebar( 'sidebar-1' );
+    }
+}
+add_action( 'widgets_init', 'register_custom_sidebars' );
+
+/* Custom Excerpt Length and More Link
+================================================================================*/
+// custom length
+function custom_excerpt_length( $length ) {
+  $pearl_excerpt_length = ( get_field( 'pearl_excerpt_length', 'option' ) ? get_field( 'pearl_excerpt_length', 'option' ) : '' );
+  $length = $pearl_excerpt_length;
+  
+  return $length;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+// Replaces the excerpt "more" text by a link
+function new_excerpt_more($more) {
+    $pearl_excerpt_ellipse = ( get_field( 'pearl_excerpt_ellipse', 'option' ) ? get_field( 'pearl_excerpt_ellipse', 'option' ) : '' );
+    $ellipse = $pearl_excerpt_ellipse;
+    return ' ' . $ellipse;
+    
+}
+add_filter( 'excerpt_more', 'new_excerpt_more' );
+
+/* Print Queries
+================================================================================*/
+function printQueries() { 
+  global $wpdb; 
+
+  if (defined('SAVEQUERIES') && SAVEQUERIES===true) { 
+  	echo '<hr />';
+    echo 'SAVEQUERIES was set properly so we can get the queries.<br>';
+    echo 'We found ' . $wpdb->num_queries . ' query(-ies)!<br>';
+    echo '<pre>'; print_r($wpdb->queries); echo '</pre>';
+  } 
+  else 
+    echo 'SAVEQUERIES was not set. Please update your wp-config.php!';
+}
+
+//add_action('wp_footer','printQueries',99999);

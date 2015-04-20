@@ -30,6 +30,18 @@
 			  outline-color: #fff;
 		}
 	}
+	.full {
+		display: none;
+		@include media-query(768px) {
+			display: block;
+		}
+	}
+	.mobile {
+		display: block;
+		@include media-query(768px) {
+			display: none;
+		}
+	}
 }
 .footer__logo {
 	width: 118px;
