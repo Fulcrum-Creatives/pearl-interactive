@@ -19,6 +19,30 @@
 		&:visited {
 			color: #fff;
 		}
+		&:hover {
+			transition: color 0.5s ease;
+			color: $color__link-hover !important;
+		}
+	}
+}
+.button__three {
+	background-color: $moroon;
+	border-bottom: 5px solid $lt_moroon;
+	text-transform: lowercase;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	color: #fff;
+	display: inline-block;
+	padding: 1em;
+	text-align: center;
+	line-height: 1em;
+	height: 48px;
+	margin: 2em 0;
+	&:visited {
+		color: #fff;
+	}
+	&:hover {
+		color: #fff;
 	}
 }
 .fp-box__button {

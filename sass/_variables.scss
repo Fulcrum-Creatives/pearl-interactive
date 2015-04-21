@@ -15,7 +15,7 @@ $aside-width: span(3);
 $color__font: #5b5c60;
 $color__header: #803e96;
 // link colors
-$color__link: #6d6e72;
+$color__link: #784ea0;
 $color__link-hover: darken($color__link, 15%);
 $color__link-visited: $color__link;
 // color pallete
@@ -25,6 +25,8 @@ $lt_green: #9fbc26;
 $yellow: #b8e027;
 $pale_yellow: #f9fbed;
 $orange: #ff7415;
+$moroon: #3e3e3e;
+$lt_moroon: #6d6e72;
 
 
 // Typography
@@ -39,19 +41,3 @@ $font-size__h3: 1.17 * $font-size__base !default;
 $font-size__h4: 1    * $font-size__base !default;
 $font-size__h5: 0.83 * $font-size__base !default;
 $font-size__h6: 0.67 * $font-size__base !default;
-// Media Queries
-//================================================================================
-// Convert px to em
-@function em($pixels, $context: $font-size__base) {
-    @return #{$pixels/$context}em;
-}
-$phone: em(480);
-$tablet: em(768);
-$desktop: em(1024);
-$breakpoints: (phone: $phone, tablet: $tablet, desktop: $desktop) !default;
-$media-expressions: (all: "all",
-					 print: "print", 
-					 screen: "screen",
-                     retina2x: ("(min-device-pixel-ratio: 2)", "(min-resolution: 192dpi)"), 
-                     retina3x: ("(min-device-pixel-ratio: 3)", "(min-resolution: 350dpi)")
-                    ) !default;

@@ -1,11 +1,9 @@
-<?php
-/*
-Template Name: News
-*/
-get_header();
-?>
+<?php get_header(); ?>
 <main id="main" class="body__content" role="main">
 	<div class="content__main post">
+	<header>
+        <h1 class="page-title"><?php printf( __( 'Category: %s', FCWPF_TAXDOMAIN ),  single_cat_title( '', false ) ); ?></h1>
+    </header>
     <?php 
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 	$wp_query = new WP_Query(array(
@@ -20,7 +18,7 @@ get_header();
 	       			<span><?php echo date('n/j'); ?></span>
 	       			<span><?php echo date('Y'); ?></span>
 	       		</div>
-	       		<div class="post__heading">
+	       		<div class="post__heading archives">
 	        		<h2 id="section-heading">
 		           		<a href="<?php echo the_permalink(); ?>">
 		            		<?php the_title(); ?>
@@ -33,12 +31,6 @@ get_header();
 					<?php endif; ?>
 				</div>
         	</heading>
-            <article class="post__content" role="article">
-            	<?php the_excerpt(); ?>
-            	<a href="<?php echo the_permalink(); ?>" class="button__two post__button-1" rel="bookmark">
-					<?php _e('Continue Article', FCWPF_TAXDOMAIN ) ?>
-				</a>
-            </article>
         </section>
     <?php endwhile; ?>
     	<nav class="post__pagination" role="navigation" aria-label="Pagination">

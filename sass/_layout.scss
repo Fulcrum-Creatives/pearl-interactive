@@ -13,8 +13,16 @@
 	position: relative;
 	@include media-query(768px) {
 		float: left;
-		width: 65%;
+		width: 690px;
+		max-width: 100%;
+		&.single {
+			margin: 0 auto;
+			float: none;
+			position: relative;
+  			left: -40px;
+		}
 	}
+
 }
 .content__sidebar {
 	float: none;
@@ -24,12 +32,4 @@
 		float: left;
 		width: 35%;
 	}
-}
-.post__date-col {
-	position: absolute;
-	width: 80px;
-}
-.post__content {
-	border-left: 80px solid #fff;
-	overflow: hidden;
 }

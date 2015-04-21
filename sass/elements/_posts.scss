@@ -1,0 +1,170 @@
+/* Posts
+================================================================================*/
+.post__section {
+	position: relative;
+	overflow: hidden;
+	.section__heading {
+		@include clearfix;
+	}
+	.post__heading {
+		margin-bottom: 1em;
+		margin-left: 87px;
+		h2 {
+			margin-top: 0;
+			margin-bottom: 0.25em;
+			line-height: 1;
+			@include media-query(768px) {
+				@include font-size(45);
+			}
+			a {
+				color: $color__header;
+				&:hover {
+					color: $color__header;
+				}
+			}
+		}
+		.post__categories {
+			height: 23px;
+			background-image: url('images/cat-icon.png');
+			background-position: left;
+			background-repeat: no-repeat;
+			padding-left: 25px;
+			margin-bottom: 2em;
+			font-size: 1em;
+			@include media-query(480px) {
+				margin-bottom: 0;
+			}
+			a {
+				color: darken($color__font, 25%);
+			}
+
+		}
+		&.archives {
+			@include font-size(16);
+			@include media-query(768px) {
+				@include font-size(9);
+			}
+			.post__categories {
+				font-size: 1.7em;
+			}
+		}
+	}
+	.post__date {
+		position: absolute;
+		width: 70px;		
+		margin-top: 2px;
+		margin-right: 20px;
+		padding-right: 10px;
+		border-right: 2px solid $lt_purple;
+		color: darken($color__font, 25%);
+		font-weight: bold;
+		@include font-size(21);
+		text-align: right;
+	}
+	.post__content {
+		clear: both;
+		margin-left: 0;
+		@include media-query(480px) {
+			margin-left: 87px;
+		}
+	}
+}
+.post__pagination {
+	margin-left: 87px;
+	margin-top: 1.5em;
+	.page-numbers {
+		border: 1px solid #6d6e72;
+		padding: 2px 3px;
+		background-color: #fff;
+		transition: color 0.5s ease, background-color 0.5s ease;
+		&.current {
+			background-color: $lt_purple;
+			color: #fff;
+			&:hover {
+				background-color: $lt_purple;
+				color: #fff;
+			}
+		}
+		&:hover {
+			transition: color 0.5s ease, background-color 0.5s ease;
+			color: #fff;
+			background-color: $purple;
+		}
+		&.dots {
+			border-color: #fff;
+		}
+	}
+}
+.single__pagi {
+	max-width: 603px;
+	clear: both;
+	margin-left: 0;
+	text-align: center;
+	@include media-query(480px) {
+		margin-left: 80px;
+	}
+	.prev,
+	.next,
+	.button__two {
+		vertical-align: top;
+	}
+	.prev,
+	.next {
+		width: 95px;
+	}
+	.button__two {
+		display: inline-block;
+		width: 300px;
+	}
+	.prev {
+		margin-right: 1em;
+		padding-left: 35px;
+		background-image: url(images/back-chev.png);
+		background-position: 10px 15px;
+		background-repeat: no-repeat;
+		display: none;
+		@include media-query(768px) {
+			display: inline-block;
+		}
+	}
+	.next {
+		margin-left: 1em;
+		padding-right: 35px;
+		background-image: url(images/next-chev.png);
+		background-position: 69px 15px;
+		background-repeat: no-repeat;
+		display: none;
+		@include media-query(768px) {
+			display: inline-block;
+		}
+	}
+}
+.post__author {
+	list-style-type: none;
+	clear: both;
+	padding: 0;
+	li {
+		float: left;
+		margin-right: 1em;
+	}
+	i {
+		@include font-size(21);
+		line-height: 0.5;
+	}
+	a {
+		color: $color__font;
+		&:hover {
+			transition: color 0.5s ease;
+			color: darken( $color__font, 15%);
+		}
+	}
+}
+.author_hr {
+	border: none;
+	outline: 0;
+	height: 2px;
+	width:100px;
+	background-color: $purple;
+	float: left;
+	margin-bottom: 1.5em;
+}

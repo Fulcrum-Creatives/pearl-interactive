@@ -32,6 +32,12 @@
 	address {
 		font-style: normal;
 	}
+	a {
+		color: $color__font;
+		&:hover {
+			color: darken( $color__font, 15% );
+		}
+	}
 }
 .footer_social {
 	text-align: center;
@@ -48,5 +54,11 @@
 	}
 	i {
 		@include font-size(37);
+	}
+	a {
+		color: $color__font;
+		&:hover {
+			color: darken( $color__font, 15% );
+		}
 	}
 }

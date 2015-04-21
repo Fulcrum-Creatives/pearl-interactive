@@ -1,0 +1,59 @@
+/* Widgets
+================================================================================*/
+.content__sidebar {
+	padding-left: 2em;
+	color: darken($color__font, 25%);
+	a {
+		color: darken($color__font, 25%);
+	}
+	h2 {
+		color: darken($color__font, 25%);
+	}
+	.widget-area {
+		list-style-type: none;
+		padding: 0;
+		overflow: hidden;
+		padding: 1em 2em;
+		border:2px solid $yellow;
+		border-radius: 10px;
+		.widget_categories .widgettitle{
+			padding-left: 30px;
+			background-image: url(images/icons.png);
+			background-repeat: no-repeat;
+			background-position: 0px -175px;
+			height: 25px;
+			line-height: 1;
+		}
+		li {
+			clear: both;
+		}
+		ul {
+			list-style-type: none;
+			padding: 0;
+			li {
+				border-bottom: 2px solid #fff;
+				padding-bottom: 0.25em;
+				margin-left: 20px;
+				margin-bottom: 0.25em;
+				display:block;
+			    float:left;
+			    clear:left;
+			    list-style:circle;
+				&:hover {
+					border-bottom: 2px solid $yellow;
+					&:before {
+						content: "";
+						width: 10px;
+						height: 10px;
+						display: inline-block;
+						position: relative;
+						margin-left: -10px;
+						left: -10px;
+						background-image: url(images/dot.png);
+						background-repeat: no-repeat;
+					}
+				}
+			}
+		}
+	}
+}
