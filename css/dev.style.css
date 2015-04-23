@@ -4,7 +4,7 @@ Theme URI: http://pinsourcing.com/
 Author: Fulcrum Creatives
 Author URI: http://fulcrumcreatives.com/
 Description: Custom WordPress Theme
-Version: 0.0.8
+Version: 0.0.9
 Tags: 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -272,6 +272,15 @@ th {
     position: relative;
     left: -40px;
   }
+  .content__main.full {
+    width: 100%;
+  }
+  .content__main.contact {
+    width: 603px;
+    margin: 0 auto;
+    float: none;
+    position: relative;
+  }
 }
 
 .content__sidebar {
@@ -283,6 +292,39 @@ th {
   .content__sidebar {
     float: left;
     width: 35%;
+  }
+}
+
+.col-sm {
+  width: 100%;
+  overflow: hidden;
+}
+.col-sm .body__content {
+  width: 1255px;
+  margin: 0 auto;
+}
+
+.col-sm__left,
+.col-sm__right {
+  max-width: 100%;
+}
+@media screen and (min-width: 945px) {
+  .col-sm__left,
+  .col-sm__right {
+    max-width: 450px;
+  }
+}
+
+.col-sm__left {
+  float: left;
+}
+
+.col-sm__right {
+  float: left;
+}
+@media screen and (min-width: 945px) {
+  .col-sm__right {
+    float: right;
   }
 }
 
@@ -317,7 +359,6 @@ html {
 
 body {
   font-size: 16px;
-  font-size: 1rem;
   font-family: 'Roboto', sans-serif;
   color: #5b5c60;
 }
@@ -330,7 +371,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Accessibility
 ================================================================================*/
-.screen-reader-text, label {
+.screen-reader-text, .footer__widgetsarea .no-label label, .searchform label, .contact label, .gform_validation_container {
   clip: rect(1px, 1px, 1px, 1px);
   position: absolute !important;
   height: 1px;
@@ -436,42 +477,22 @@ embed {
   }
 }
 
-.col-sm {
-  width: 100%;
-  overflow: hidden;
+.page-heading {
+  font-size: 45px;
+  font-size: 2.8125em;
+  margin-top: 0;
+}
+.page-heading.heading__contact {
+  font-size: 65px;
+  font-size: 4.0625em;
+}
+
+.fp-box {
   padding: 4em 15px;
 }
-.col-sm .body__content {
-  width: 1255px;
-  margin: 0 auto;
-}
-.col-sm p {
+.fp-box p {
   font-size: 21px;
   font-size: 1.3125em;
-}
-
-.col-sm_left,
-.col-sm_right {
-  max-width: 100%;
-}
-@media screen and (min-width: 945px) {
-  .col-sm_left,
-  .col-sm_right {
-    max-width: 450px;
-  }
-}
-
-.col-sm_left {
-  float: left;
-}
-
-.col-sm_right {
-  float: left;
-}
-@media screen and (min-width: 945px) {
-  .col-sm_right {
-    float: right;
-  }
 }
 
 .fp-box__two {
@@ -490,6 +511,47 @@ embed {
   font-size: 31px;
   font-size: 1.9375em;
   margin: 0;
+}
+
+.contact__info {
+  width: 100%;
+  padding: 1.5em 3.5em;
+  background-color: #f2f2f2;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-size: 19px;
+  font-size: 1.1875em;
+}
+.contact__info li {
+  display: block;
+  border-right: none;
+  padding: 0;
+  margin-bottom: 0.5em;
+}
+@media screen and (min-width: 900px) {
+  .contact__info li {
+    display: inline-block;
+    border-right: 1px solid;
+    padding: 1px 9px 1px 4px;
+  }
+}
+.contact__info li:last-child {
+  border-right: none;
+}
+.contact__info address {
+  font-style: normal;
+}
+.contact__info a {
+  color: #5b5c60;
+}
+.contact__info a:hover {
+  color: #363639;
+}
+.contact__info ul {
+  padding: 1em 0 0;
+  margin: 0;
+  border-top: 1px solid #784ea0;
+  display: inline-block;
 }
 
 /* Posts
@@ -618,14 +680,21 @@ embed {
 }
 .single__pagi .prev,
 .single__pagi .next,
-.single__pagi .button__two {
+.single__pagi .button__two,
+.single__pagi .button__four,
+.single__pagi .footer__widgetsarea .gform_button,
+.footer__widgetsarea .single__pagi .gform_button,
+.single__pagi .footer__widgetsarea .widget_button,
+.footer__widgetsarea .single__pagi .widget_button,
+.single__pagi .contact .gform_button,
+.contact .single__pagi .gform_button {
   vertical-align: top;
 }
 .single__pagi .prev,
 .single__pagi .next {
   width: 95px;
 }
-.single__pagi .button__two {
+.single__pagi .button__two, .single__pagi .button__four, .single__pagi .footer__widgetsarea .gform_button, .footer__widgetsarea .single__pagi .gform_button, .single__pagi .footer__widgetsarea .widget_button, .footer__widgetsarea .single__pagi .widget_button, .single__pagi .contact .gform_button, .contact .single__pagi .gform_button {
   display: inline-block;
   width: 300px;
 }
@@ -768,18 +837,6 @@ embed {
   *display: inline;
   zoom: 1;
 }
-@media screen and (min-width: 768px) {
-  .nav__menu.horizontal {
-    margin: 0;
-    text-align: right;
-  }
-  .nav__menu.horizontal li {
-    margin: 0;
-    display: inline-block;
-    *display: inline;
-    zoom: 1;
-  }
-}
 .nav__menu.horizontal li {
   vertical-align: top;
 }
@@ -789,6 +846,28 @@ embed {
 @media screen and (min-width: 768px) {
   .nav__menu.horizontal .menu-item-contact {
     display: inline-block;
+  }
+}
+.nav__menu.right {
+  margin: 0;
+  text-align: center;
+}
+.nav__menu.right li {
+  margin: 0;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+@media screen and (min-width: 768px) {
+  .nav__menu.right {
+    margin: 0;
+    text-align: right;
+  }
+  .nav__menu.right li {
+    margin: 0;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
   }
 }
 .nav__menu li {
@@ -802,7 +881,7 @@ embed {
 }
 @media screen and (min-width: 480px) {
   .nav__menu li a {
-    padding: 0 1.5em;
+    padding: 0 1em;
   }
 }
 
@@ -840,6 +919,62 @@ embed {
 @media screen and (min-width: 768px) {
   .body__footer .nav__menu.horizontal .menu-item-contact {
     display: inline-block;
+  }
+}
+
+.nav__sub {
+  margin-top: -3em;
+  margin-bottom: 2em;
+  text-align: left;
+}
+@media screen and (min-width: 768px) {
+  .nav__sub {
+    text-align: center;
+  }
+}
+.nav__sub .nav__menu {
+  border-bottom: 2px solid #b8e027;
+  text-align: left;
+  display: block;
+  padding-bottom: 1em;
+}
+@media screen and (min-width: 768px) {
+  .nav__sub .nav__menu {
+    display: inline-block;
+    text-align: center;
+    padding-bottom: 0;
+  }
+}
+.nav__sub .nav__menu li {
+  height: auto;
+  position: relative;
+  line-height: 1.5;
+  width: 100%;
+  text-align: left;
+}
+.nav__sub .nav__menu li.current_page_item {
+  display: none;
+}
+.nav__sub .nav__menu li a {
+  height: auto;
+  color: #5b5c60;
+  font-weight: bold;
+  padding-bottom: 0.5em;
+}
+.nav__sub .nav__menu li a:hover {
+  color: #363639;
+}
+@media screen and (min-width: 768px) {
+  .nav__sub .nav__menu li a {
+    padding-bottom: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav__sub .nav__menu li {
+    height: 43px;
+    width: auto;
+    text-align: center;
+    line-height: 2.7;
   }
 }
 
@@ -990,26 +1125,26 @@ embed {
 
 /* buttons
 ================================================================================*/
-.button__one, .button__two {
+.button__one, .button__two, .button__four, .footer__widgetsarea .gform_button, .footer__widgetsarea .widget_button, .contact .gform_button {
   background-color: #9fbc26;
   border-bottom: 5px solid #b8e027;
   text-transform: lowercase;
   letter-spacing: 1px;
 }
-.button__one a, .button__two a {
+.button__one a, .button__two a, .button__four a, .footer__widgetsarea .gform_button a, .footer__widgetsarea .widget_button a, .contact .gform_button a {
   color: #fff;
 }
 
-.button__two {
+.button__two, .button__four, .footer__widgetsarea .gform_button, .footer__widgetsarea .widget_button, .contact .gform_button {
   text-transform: uppercase;
   padding: 0.3em 0 0.6em;
   color: #fff;
   display: block;
 }
-.button__two a:visited {
+.button__two a:visited, .button__four a:visited, .footer__widgetsarea .gform_button a:visited, .footer__widgetsarea .widget_button a:visited, .contact .gform_button a:visited {
   color: #fff;
 }
-.button__two a:hover {
+.button__two a:hover, .button__four a:hover, .footer__widgetsarea .gform_button a:hover, .footer__widgetsarea .widget_button a:hover, .contact .gform_button a:hover {
   -webkit-transition: color 0.5s ease;
           transition: color 0.5s ease;
   color: #51356d !important;
@@ -1034,6 +1169,17 @@ embed {
 }
 .button__three:hover {
   color: #fff;
+}
+
+.button__four, .footer__widgetsarea .gform_button, .footer__widgetsarea .widget_button {
+  background-color: #fff;
+  border-top: 2px solid #b8e027;
+  border-left: 2px solid #b8e027;
+  border-right: 2px solid #b8e027;
+  border-bottom: 5px solid #b8e027;
+  color: #9fbc26;
+  position: absolute;
+  bottom: 0px;
 }
 
 .fp-box__button {
@@ -1132,14 +1278,115 @@ embed {
   background-repeat: no-repeat;
 }
 
+.footer__widgetsarea ul {
+  padding: 0;
+  list-style-type: none;
+}
+.footer__widgetsarea ul li {
+  width: 100%;
+  float: none;
+  padding: 0 1em 2em;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .footer__widgetsarea ul li {
+    width: 33.333%;
+    float: left;
+  }
+}
+.footer__widgetsarea .widgettitle {
+  font-size: 30px;
+  font-size: 1.875em;
+}
+.footer__widgetsarea .upw-posts article {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.footer__widgetsarea .upw-posts .entry-title {
+  font-size: 30px;
+  font-size: 1.875em;
+}
+.footer__widgetsarea .upw-posts .entry-title a:hover {
+  text-decoration: none;
+}
+.footer__widgetsarea .upw-posts a {
+  color: #1d1d1f;
+}
+.footer__widgetsarea .upw-posts a:hover {
+  color: #363639;
+  text-decoration: none;
+}
+.footer__widgetsarea .gform_button {
+  outline: 0;
+  width: 95%;
+  padding-top: 0.7em;
+  margin-top: 1.5em;
+}
+.footer__widgetsarea .gform_body ul {
+  width: 100%;
+  overflow: hidden;
+}
+.footer__widgetsarea .gform_body ul li {
+  float: none;
+  width: 100%;
+  padding-bottom: 1em;
+}
+.footer__widgetsarea .gfield_checkbox {
+  margin: 1em 0;
+}
+.footer__widgetsarea .gfield_checkbox li {
+  padding: 0.25em 0;
+  position: relative;
+}
+.footer__widgetsarea .cust-checkbox > label {
+  font-style: italic;
+  color: #784ea0;
+}
+.footer__widgetsarea .widget_button {
+  width: 95%;
+  padding-top: 0;
+  padding-bottom: 0.8em;
+  margin-top: 1.5em;
+  text-align: center;
+  line-height: 0.9;
+}
+
 /* Forms
 ================================================================================*/
 .searchform {
   position: relative;
   margin-top: 1.5em;
 }
+.searchform .search__submit {
+  position: absolute;
+  right: 1em;
+  top: 12px;
+}
+
+.contact .gform_wrapper {
+  margin-top: 5em;
+}
+.contact .gform_button {
+  outline: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+  padding-top: 0.7em;
+}
+.contact .gform_confirmation_wrapper {
+  margin-top: 5em;
+}
+
+.gform_fields {
+  list-style-type: none;
+  padding: 0;
+}
 
 input[type="text"] {
+  width: 100%;
+  padding: 0.5em 1em;
+  margin-bottom: 1.5em;
   border-top: none;
   border-right: none;
   border-left: none;
@@ -1147,15 +1394,44 @@ input[type="text"] {
   outline: 0;
 }
 
-.search__field {
+textarea {
   width: 100%;
   padding: 0.5em 1em;
+  margin-bottom: 1.5em;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid #b8e027;
+  border-left: 2px solid #b8e027;
+  border-right: 2px solid #b8e027;
+  outline: 0;
 }
 
-.search__submit {
+.gfield_checkbox label {
+  padding-left: 25px;
+}
+
+input[type=checkbox] {
   position: absolute;
-  right: 1em;
-  top: 12px;
+  opacity: 0;
+  z-index: 10;
+  left: 3px;
+  top: 5px;
+}
+
+.check-style {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 2px solid #b8e027;
+}
+
+input:checked ~ .check-style {
+  background-color: #784ea0;
 }
 
 ::-webkit-input-placeholder {
@@ -1181,8 +1457,23 @@ input[type="text"] {
   font-style: italic;
 }
 
+.validation_message {
+  position: absolute;
+  right: 4px;
+  margin-top: -60px;
+  text-indent: -9999px;
+  width: 25px;
+  height: 25px;
+  background-image: url("images/cross.png");
+  white-space: nowrap;
+}
+
 /* Footer
 ================================================================================*/
+.footer__widgetsarea {
+  margin-top: 5em;
+}
+
 .footer__widgetsarea,
 .body__footer {
   border-top: 4px solid #ff7415;

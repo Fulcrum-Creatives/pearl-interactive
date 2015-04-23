@@ -22,9 +22,8 @@ module.exports = function(grunt) {
 	            src: [
 	                'js/lib/no-conflict/no-conflict.js',
 	                'js/lib/skip-navigation/skip-navigation.js',
-	                'js/lib/functions/functions.js',
-	                'js/lib/nav-menu/dropdown.js',
-	                'js/lib/nav-menu/nav-menu.js',
+	                'js/lib/forms/forms.js',
+	                'js/lib/equal-heights/equal-heights.js',
 	            ],
 	            dest: 'js/lib/dev.scripts.js',
 	        }

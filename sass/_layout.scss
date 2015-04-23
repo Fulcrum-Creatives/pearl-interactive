@@ -21,6 +21,15 @@
 			position: relative;
   			left: -40px;
 		}
+		&.full {
+			width: 100%;
+		}
+		&.contact {
+			width: 603px;
+			margin: 0 auto;
+			float: none;
+			position: relative;
+		}
 	}
 
 }
@@ -31,5 +40,29 @@
 	@include media-query(768px) {
 		float: left;
 		width: 35%;
+	}
+}
+.col-sm {
+	width: 100%;
+	overflow: hidden;
+	.body__content {
+		width: 1255px;
+		margin: 0 auto;
+	}
+}
+.col-sm__left ,
+.col-sm__right {
+	max-width: 100%;
+	@include media-query(945px) {
+		max-width: 450px;
+	}
+}
+.col-sm__left {
+	float: left;
+}
+.col-sm__right {
+	float: left;
+	@include media-query(945px) {
+		float: right;
 	}
 }

@@ -57,3 +57,88 @@
 		}
 	}
 }
+.footer__widgetsarea {
+	ul {
+		padding: 0;
+		list-style-type: none;
+		li {
+			width: 100%;
+			float: none;
+			padding: 0 1em 2em;
+			position: relative;
+			@include media-query(768px) {
+				width: 33.333%;
+				float: left;
+			}
+		}
+	}
+	.widgettitle {
+		@include font-size(30);
+	}
+	.upw-posts {
+		article {
+			padding-bottom: 0;
+			border-bottom: none;
+		}
+		.entry-title {
+			@include font-size(30);
+			a {
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+		a {
+			color: darken($color__font, 25%);
+			&:hover {
+				color: darken( $color__font, 15% );
+				text-decoration: none;
+			}
+		}
+	}
+	.gform_button {
+		outline: 0;
+		width: 95%;
+		padding-top: 0.7em;
+		@extend .button__one;
+		@extend .button__four;
+		margin-top: 1.5em;
+	}
+	.gform_body {
+		ul {
+			width: 100%;
+			overflow: hidden;
+			li {
+				float: none;
+				width: 100%;
+				padding-bottom: 1em;
+			}
+		}
+	}
+	.no-label {
+		label {
+			@extend .screen-reader-text;
+		}
+	}
+	.gfield_checkbox {
+		margin: 1em 0;
+		li {
+			padding: 0.25em 0;
+			position: relative;
+		}
+	}
+	.cust-checkbox > label {
+		font-style: italic;
+		color: $purple;
+	}
+	.widget_button {
+		width: 95%;
+		padding-top: 0;
+  		padding-bottom: 0.8em;
+		@extend .button__one;
+		@extend .button__four;
+		margin-top: 1.5em;
+		text-align: center;
+  		line-height: 0.9;
+	}
+}

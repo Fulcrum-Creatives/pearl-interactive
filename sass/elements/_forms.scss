@@ -3,27 +3,88 @@
 .searchform {
 	position: relative;
 	margin-top: 1.5em;
+	.search__submit {
+		position: absolute;
+		right: 1em;
+		top: 12px;
+	}
+	label {
+		@extend .screen-reader-text;
+	}
 }
-label {
-	@extend .screen-reader-text;
+
+.contact {
+	.gform_wrapper {
+		margin-top: 5em;
+	}
+	label {
+		@extend .screen-reader-text;
+	}
+	.gform_button {
+		outline: 0;
+		border-top: none;
+		border-left: none;
+		border-right: none;
+		width: 100%;
+		padding-top: 0.7em;
+		@extend .button__one;
+		@extend .button__two;
+	}
+	.gform_confirmation_wrapper {
+		margin-top: 5em;
+	}
+}
+.gform_fields {
+	list-style-type: none;
+	padding: 0;
 }
 input[type="text"] {
+	width: 100%;
+	padding: 0.5em 1em;
+	margin-bottom: 1.5em;
 	border-top: none;
 	border-right: none;
 	border-left: none;
 	border-bottom: 2px solid $yellow;
 	outline: 0;
 }
-.search__field {
+textarea {
 	width: 100%;
 	padding: 0.5em 1em;
+	margin-bottom: 1.5em;
+	border-top: none;
+	border-right: none;
+	border-left: none;
+	border-bottom: 2px solid $yellow;
+	border-left: 2px solid $yellow;
+	border-right: 2px solid $yellow;
+	outline: 0;
 }
-.search__submit {
+.gfield_checkbox {
+	label {
+		padding-left: 25px;
+	}
+}
+input[type=checkbox] {
 	position: absolute;
-	right: 1em;
-	top: 12px;
+  	opacity: 0;
+  	z-index: 10;
+  	left: 3px;
+  	top: 5px;
 }
-
+.check-style {
+	position: absolute;
+	top: 2px;
+	left: 0;
+	display: block;
+	width:  20px;
+	height: 20px;
+	background-color: transparent;
+	border: 2px solid $yellow;
+}
+input:checked ~ .check-style {
+  background-color: $purple;
+}
 ::-webkit-input-placeholder {
    color: lighten( $color__font, 15% );  
    font-style: italic;
@@ -44,3 +105,17 @@ input[type="text"] {
    color: $color__font;  
    font-style: italic;  
 }
+.gform_validation_container {
+	@extend .screen-reader-text;
+}
+.validation_message {
+	position: absolute;
+	right: 4px;
+	margin-top: -60px;
+	text-indent: -9999px;
+	width: 25px;
+	height: 25px;
+	background-image: url('images/cross.png');
+	white-space: nowrap;
+}
+

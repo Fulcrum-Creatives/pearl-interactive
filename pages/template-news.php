@@ -3,6 +3,8 @@
 Template Name: News
 */
 get_header();
+$pearl_excerpt_length = ( get_field( 'pearl_excerpt_length', 'option' ) ? get_field( 'pearl_excerpt_length', 'option' ) : '' );
+$pearl_excerpt_ellipse = ( get_field( 'pearl_excerpt_ellipse', 'option' ) ? get_field( 'pearl_excerpt_ellipse', 'option' ) : '' );
 ?>
 <main id="main" class="body__content" role="main">
 	<div class="content__main post">
@@ -34,7 +36,7 @@ get_header();
 				</div>
         	</heading>
             <article class="post__content" role="article">
-            	<?php the_excerpt(); ?>
+            	<?php echo wp_trim_words( get_the_excerpt(), $pearl_excerpt_length ) ; ?>
             	<a href="<?php echo the_permalink(); ?>" class="button__two post__button-1" rel="bookmark">
 					<?php _e('Continue Article', FCWPF_TAXDOMAIN ) ?>
 				</a>

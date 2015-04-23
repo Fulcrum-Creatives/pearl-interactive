@@ -27,40 +27,52 @@ var test;
         }, false );
     }
 })();
-// Add new attribute
-function fcwpf_addNewAttribute(elementID, attrName, attrValue) {
-	var theElementID = document.getElementById(elementID),
-		theAttrName = document.createAttribute(attrName);
-	// check if ariaValue isset, if not add NULL as Default
-	attrValue = typeof attrValue !== 'undefined' ? attrValue : 'NULL';
-	// if attrValue not set, do not add a value to the attribute
-	if(attrValue !== 'NULL') {
-		theAttrName.value = attrValue;
-	}
-  	// set the attribute
-    theElementID.setAttributeNode(theAttrName);
-}
-
-function fcwpf_addNewClassName(elementClass, newClass) {
-	var element = document.querySelectorAll('.' + elementClass);
-	element.className += " " + newClass;
-}
-(function( $ ) {
-'use strict';
-
-    $(function() {
-        
-    });
-
-})( jQuery );
 (function( $ ) {
 	'use strict';
-	// Add aria-expand aatribute to the mobile menu icon
-	fcwpf_addNewAttribute('menu__icon', 'aria-expanded', 'false');
 
-	fcwpf_addNewClassName('menu__icon', 'closed');
-
-	fcwpf_addNewClassName('main-menu-item', 'closed');
-
+	$(function() {
+		$( '<span class="check-style"></span>' ).insertAfter( '.cust-checkbox input[type=checkbox]' );
+	});
 
 })( jQuery );
+equalheight = function(container){
+
+var currentTallest = 0,
+     currentRowStart = 0,
+     rowDivs = new Array(),
+     $el,
+     topPosition = 0;
+ $(container).each(function() {
+
+   $el = $(this);
+   $($el).height('auto');
+   topPostion = $el.position().top;
+
+   if (currentRowStart != topPostion) {
+     for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+       rowDivs[currentDiv].height(currentTallest);
+     }
+     rowDivs.length = 0; // empty the array
+     currentRowStart = topPostion;
+     currentTallest = $el.height();
+     rowDivs.push($el);
+   } else {
+     rowDivs.push($el);
+     currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+  }
+   for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+     rowDivs[currentDiv].height(currentTallest);
+   }
+ });
+};
+
+$(window).load(function() {
+  equalheight('.footer__widgetsarea li');
+});
+
+
+$(window).resize(function(){
+  if($(window).width() >= 768) {
+     equalheight('.footer__widgetsarea li');
+  }
+});

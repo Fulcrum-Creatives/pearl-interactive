@@ -9,7 +9,7 @@ html {
 	box-sizing: inherit;
 }
 body {
-	@include font-size($font-size__base, rem);
+	font-size: 16px;
 	font-family: 'Roboto', sans-serif;
 	color: $color__font;
 }

@@ -1,5 +1,8 @@
 /* Footer
 ================================================================================*/
+.footer__widgetsarea {
+	margin-top: 5em;
+}
 .footer__widgetsarea,
 .body__footer {
 	border-top: 4px solid $orange;
@@ -9,7 +12,7 @@
 	border-top: 4px solid $orange;
 	padding: 4em 15px 0;
 }
-.footer__info {
+.footer__info, {
 	text-transform: uppercase;
 	text-align: center;
 	margin: 2.5em 0 0;

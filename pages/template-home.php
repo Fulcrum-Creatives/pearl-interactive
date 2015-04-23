@@ -23,12 +23,12 @@ $pearl_box_3_link_text     = ( get_field( 'pearl_box_3_link_text' ) ? get_field(
 <h2 style="display: none">Our Services</h1>
 	<section class="col-sm fp-box fp-box__one" aria-labelledby="fp-box__heading-one">
 		<div class="body__content">
-			<div class="col-sm_left">
+			<div class="col-sm__left">
 				<h3 id="fp-box__heading-one" class="fp-box__heading">
 					<?php echo $pearl_box_1_title; ?>
 				</h3>
 			</div>
-			<div class="col-sm_right">
+			<div class="col-sm__right">
 				<h4 class="fp-box__sub-heading">
 					<?php echo $pearl_box_1_subtitle; ?>
 				</h4>
@@ -41,12 +41,12 @@ $pearl_box_3_link_text     = ( get_field( 'pearl_box_3_link_text' ) ? get_field(
 	</section>
 	<section class="col-sm fp-box fp-box__two" aria-labelledby="fp-box__heading-two">
 		<div class="body__content">
-			<div class="col-sm_right">
+			<div class="col-sm__right">
 				<h3 id="fp-box__heading-two" class="fp-box__heading">
 					<?php echo $pearl_box_2_title; ?>
 				</h3>
 			</div>
-			<div class="col-sm_left">
+			<div class="col-sm__left">
 				<h4 class="fp-box__sub-heading">
 					<?php echo $pearl_box_2_subtitle; ?>
 				</h4>
@@ -59,12 +59,12 @@ $pearl_box_3_link_text     = ( get_field( 'pearl_box_3_link_text' ) ? get_field(
 	</section>
 	<section class="col-sm fp-box fp-box__three" aria-labelledby="fp-box__heading-three">
 		<div class="body__content">
-			<div class="col-sm_left">
+			<div class="col-sm__left">
 				<h3 id="fp-box__heading-three" class="fp-box__heading">
 					<?php echo $pearl_box_3_title; ?>
 				</h3>
 			</div>
-			<div class="col-sm_right">
+			<div class="col-sm__right">
 				<h4 class="fp-box__sub-heading">
 					<?php echo $pearl_box_3_subtitle; ?>
 				</h4>

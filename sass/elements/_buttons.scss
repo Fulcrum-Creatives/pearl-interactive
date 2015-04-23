@@ -45,6 +45,17 @@
 		color: #fff;
 	}
 }
+.button__four {
+	@extend .button__two;
+	background-color: #fff;
+	border-top: 2px solid $yellow;
+	border-left: 2px solid $yellow;
+	border-right: 2px solid $yellow;
+	border-bottom: 5px solid $yellow;
+	color: $lt_green;
+	position: absolute;
+	bottom: 0px;
+}
 .fp-box__button {
 	max-width: 310px;
 	text-align: center;

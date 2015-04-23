@@ -34,7 +34,6 @@
 	&.horizontal {
 		@include hor-list-pos(center);
 		@include media-query(768px) {
-			@include hor-list-pos(right);
 		}
 		li {
 			vertical-align: top;
@@ -46,6 +45,12 @@
 			}
 		}
 	}
+	&.right {
+		@include hor-list-pos(center);
+		@include media-query(768px) {
+			@include hor-list-pos(right);
+		}
+	}
 	li {
 		height: 43px;
 		position: relative;
@@ -54,7 +59,7 @@
 			padding: 0 0.2em;
 			display: block;
 			@include media-query(480px) {
-				padding: 0 1.5em;
+				padding: 0 1em;
 			}
 		}
 	}
@@ -83,6 +88,53 @@
 				@include media-query(768px) {
 					display: inline-block;
 				}
+			}
+		}
+	}
+}
+.nav__sub {
+	margin-top: -3em;
+  	margin-bottom: 2em;
+  	text-align: left;
+  	@include media-query(768px) {
+		text-align: center; 
+	}
+	.nav__menu {
+		border-bottom: 2px solid $yellow;
+		text-align: left;
+		display: block;
+		padding-bottom: 1em;
+		@include media-query(768px) {
+			display: inline-block;
+			text-align: center; 
+			padding-bottom: 0;
+		}
+		li {
+			height: auto;
+			position: relative;
+			line-height: 1.5;
+			width: 100%;
+			text-align: left;
+			&.current_page_item {
+				display: none;
+			}
+			a {
+				height: auto;
+				color: $color__font;
+				font-weight: bold;
+				padding-bottom: 0.5em;
+				&:hover {
+					color: darken( $color__font, 15% );
+				}
+				@include media-query(768px) {
+					padding-bottom: 0; 
+				}
+			}
+			@include media-query(768px) {
+				height: 43px;
+				width: auto;
+				text-align: center;
+				line-height: 2.7;
 			}
 		}
 	}
