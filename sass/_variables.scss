@@ -21,10 +21,10 @@ $color__link-visited: $color__link;
 // color pallete
 $purple: #784ea0;
 $lt_purple: #c1a0cb;
-$lt_green: #9fbc26;
-$yellow: #b8e027;
+$lt_green: darken( #9fbc26, 10% );
+$yellow: darken( #b8e027, 10% );
 $pale_yellow: #f9fbed;
-$orange: #ff7415;
+$orange: darken( #ff7415, 10% );
 $moroon: #3e3e3e;
 $lt_moroon: #6d6e72;
 $lt_grey: #f2f2f2;
