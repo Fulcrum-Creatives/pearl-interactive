@@ -20,7 +20,7 @@ $pearl_box_3_link     = ( get_field( 'pearl_box_3_link' ) ? get_field( 'pearl_bo
 $pearl_box_3_link_text     = ( get_field( 'pearl_box_3_link_text' ) ? get_field( 'pearl_box_3_link_text' ) : '' );
 ?>
 <main id="main" class="body__content" role="main">
-<h2 style="display: none">Our Services</h1>
+<h2 style="display: none">Our Services</h2>
 	<section class="col-sm fp-box fp-box__one" aria-labelledby="fp-box__heading-one">
 		<div class="body__content">
 			<div class="col-sm__left">
