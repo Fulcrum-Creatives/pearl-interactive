@@ -242,13 +242,3 @@ function my_gform_enqueue_scripts($form, $is_ajax=false){?>
     </script>
 <?php
 }
-
-/* GravityForms remove tabbed index
-================================================================================*/
-function gform_tabindexer( $tab_index, $form = false ) {
-    $starting_index = 1000; // if you need a higher tabindex, update this number
-    if( $form )
-        add_filter( 'gform_tabindex_' . $form['id'], 'gform_tabindexer' );
-    return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
-}
-add_filter( 'gform_tabindex', 'gform_tabindexer', 10, 2 );
