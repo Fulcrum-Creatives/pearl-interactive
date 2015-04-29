@@ -12,14 +12,14 @@
 	));
 	if (have_posts()) : while ($wp_query->have_posts()) : $wp_query->the_post();
     ?>
-        <section class="post__section" aria-labelledby="section-heading">
+        <section class="post__section" aria-labelledby="section-heading-<?php echo $post->ID; ?>">
         	<heading class="section__heading">
         		<div class="post__date">
 	       			<span><?php echo date('n/j'); ?></span>
 	       			<span><?php echo date('Y'); ?></span>
 	       		</div>
 	       		<div class="post__heading archives">
-	        		<h2 id="section-heading">
+	        		<h2 id="section-heading-<?php echo $post->ID; ?>">
 		           		<a href="<?php echo the_permalink(); ?>">
 		            		<?php the_title(); ?>
 		            	</a>
