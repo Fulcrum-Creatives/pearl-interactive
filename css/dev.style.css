@@ -1475,6 +1475,11 @@ input:checked ~ .check-style {
   margin: 0;
 }
 
+.no-padding {
+  padding: 0;
+  height: 1px;
+}
+
 /* Footer
 ================================================================================*/
 .footer__widgetsarea {
