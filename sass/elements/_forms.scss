@@ -105,7 +105,8 @@ input:checked ~ .check-style {
    color: $color__font;  
    font-style: italic;  
 }
-.gform_validation_container {
+.gform_validation_container,
+.gfieldset legend {
 	@extend .screen-reader-text;
 }
 .validation_message {
@@ -118,4 +119,8 @@ input:checked ~ .check-style {
 	background-image: url('images/cross.png');
 	white-space: nowrap;
 }
-
+.gfieldset {
+	border: none;
+	padding: 0;
+	margin: 0
+}
