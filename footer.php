@@ -1,6 +1,8 @@
+<?php if( !is_404() ) : ?>
 <aside class="footer__widgetsarea body__content" role="complementary">
 	<?php get_sidebar('footer'); ?>
 </aside>
+<?php endif; ?>
 <footer class="body__footer body__content" role="contentinfo">
 	<?php get_template_part( 'includes/footerMenu' ); ?>
 	<?php

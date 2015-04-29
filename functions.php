@@ -243,3 +243,11 @@ function my_gform_enqueue_scripts($form, $is_ajax=false){?>
     </script>
 <?php
 }
+/* Remove Gravityfroms tabbed index
+================================================================================*/
+add_filter( 'gform_tabindex', 'gform_tabindexer', 10, 2 );
+function gform_tabindexer( $tab_index, $form = false ) {
+    if( $form ){
+        remove_filter( 'gform_tabindex_' . $form['id'], 'gform_tabindexer' );
+    }
+}
