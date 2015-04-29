@@ -6,7 +6,7 @@ $footer_args = array(
 	'theme_location' => 'footer', 
     'container'		 => '',
     'menu_class'     => 'nav__menu horizontal right',
-    'menu_id'        => 'nav__menu',
+    'menu_id'        => 'nav__menu-footer',
     'items_wrap'	 => $footer_nav_wrapper,
     'walker'		 => new fc_wp_walker_nav_menu
 );

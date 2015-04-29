@@ -2,7 +2,7 @@
 	<?php get_sidebar('footer'); ?>
 </aside>
 <footer class="body__footer body__content" role="contentinfo">
-	<?php get_template_part( 'includes/primaryMenu' ); ?>
+	<?php get_template_part( 'includes/footerMenu' ); ?>
 	<?php
 	$pearl_address = ( get_field( 'pearl_address', 'option' ) ? get_field( 'pearl_address', 'option' ) : '' );
 	$pearl_city = ( get_field( 'pearl_city', 'option' ) ? get_field( 'pearl_city', 'option' ) : '' );
