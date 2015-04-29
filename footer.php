@@ -20,9 +20,9 @@
 		<li><?php _e( 'Phone', FCWPF_TAXDOMAIN ); echo ' <a href="tel:+' . $pearl_phone_number . '">' . $pearl_phone_number; ?></a></li>
 	</ul>
 	<ul class="footer_social">
-		<li><a href="<?php echo $pearl_twitter_link; ?>"><i class="fa fa-facebook"></i></a></li>
-		<li><a href="<?php echo $pearl_facebook_link; ?>"><i class="fa fa-twitter"></i></a></li>
-		<li><a href="<?php echo $pearl_linkedin_link; ?>"><i class="fa fa-linkedin-square"></i></a></li>
+		<li><a href="<?php echo $pearl_twitter_link; ?>"><i class="fa fa-facebook"><span class="screen-reader-text">Twitter</span></i></a></li>
+		<li><a href="<?php echo $pearl_facebook_link; ?>"><i class="fa fa-twitter"><span class="screen-reader-text">Facebook</span></i></a></li>
+		<li><a href="<?php echo $pearl_linkedin_link; ?>"><i class="fa fa-linkedin-square"><span class="screen-reader-text">LinkedIn</span></i></a></li>
 		<li class="footer__logo"><?php get_template_part( 'includes/footerLogo' ); ?></li>
 	</ul>
 </footer>
