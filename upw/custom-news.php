@@ -35,7 +35,7 @@
             <?php if (get_the_title() && $instance['show_title']) : ?>
               <h3 class="entry-title">
                 <a href="<?php the_permalink(); ?>" rel="bookmark">
-                  <?php the_title(); ?>
+                  <span class="screen-reader-text"><?php _e('Click to view full article for ', FCWPF_TAXDOMAIN ); ?></span><?php the_title(); ?>
                 </a>
               </h3>
             <?php endif; ?>
