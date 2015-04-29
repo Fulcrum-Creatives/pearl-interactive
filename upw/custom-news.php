@@ -20,7 +20,7 @@
 
         <?php $current_post = ($post->ID == $current_post_id && is_single()) ? 'active' : ''; ?>
 
-        <article <?php post_class($current_post); ?>>
+        <article <?php post_class($current_post); ?> aria-labelledby="section-heading-<?php echo $post->ID; ?>">
 
           <header>
 
@@ -33,7 +33,7 @@
             <?php endif; ?>
 
             <?php if (get_the_title() && $instance['show_title']) : ?>
-              <h3 class="entry-title">
+              <h3 id="section-heading-<?php echo $post->ID; ?>" class="entry-title">
                 <a href="<?php the_permalink(); ?>" rel="bookmark">
                   <span class="screen-reader-text"><?php _e('Click to view full article for ', FCWPF_TAXDOMAIN ); ?></span><?php the_title(); ?>
                 </a>
