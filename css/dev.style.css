@@ -4,7 +4,7 @@ Theme URI: http://pinsourcing.com/
 Author: Fulcrum Creatives
 Author URI: http://fulcrumcreatives.com/
 Description: Custom WordPress Theme
-Version: 0.0.14
+Version: 0.0.15
 Tags: 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -934,7 +934,7 @@ embed {
   }
 }
 .nav__sub .nav__menu {
-  border-bottom: 2px solid #97b91b;
+  border-bottom: 2px solid #b8e027;
   text-align: left;
   display: block;
   padding-bottom: 1em;
@@ -1121,14 +1121,14 @@ embed {
 }
 .heroimage figcaption span {
   display: inline-block;
-  border-bottom: 5px solid #97b91b;
+  border-bottom: 5px solid #b8e027;
 }
 
 /* buttons
 ================================================================================*/
 .button__one, .button__two, .button__four, .footer__widgetsarea .gform_button, .footer__widgetsarea .widget_button, .contact .gform_button {
-  background-color: #7b921d;
-  border-bottom: 5px solid #97b91b;
+  background-color: #9fbc26;
+  border-bottom: 5px solid #b8e027;
   text-transform: lowercase;
   letter-spacing: 1px;
 }
@@ -1174,11 +1174,11 @@ embed {
 
 .button__four, .footer__widgetsarea .gform_button, .footer__widgetsarea .widget_button {
   background-color: #fff;
-  border-top: 2px solid #97b91b;
-  border-left: 2px solid #97b91b;
-  border-right: 2px solid #97b91b;
-  border-bottom: 5px solid #97b91b;
-  color: #7b921d;
+  border-top: 2px solid #b8e027;
+  border-left: 2px solid #b8e027;
+  border-right: 2px solid #b8e027;
+  border-bottom: 5px solid #b8e027;
+  color: #9fbc26;
   position: absolute;
   bottom: 0px;
 }
@@ -1236,7 +1236,7 @@ embed {
   padding: 0;
   overflow: hidden;
   padding: 1em 2em;
-  border: 2px solid #97b91b;
+  border: 2px solid #b8e027;
   border-radius: 10px;
 }
 .content__sidebar .widget-area .widget_categories .widgettitle {
@@ -1265,7 +1265,7 @@ embed {
   list-style: circle;
 }
 .content__sidebar .widget-area ul li:hover {
-  border-bottom: 2px solid #97b91b;
+  border-bottom: 2px solid #b8e027;
 }
 .content__sidebar .widget-area ul li:hover:before {
   content: "";
@@ -1391,7 +1391,7 @@ input[type="text"] {
   border-top: none;
   border-right: none;
   border-left: none;
-  border-bottom: 2px solid #97b91b;
+  border-bottom: 2px solid #b8e027;
   outline: 0;
 }
 
@@ -1402,9 +1402,9 @@ textarea {
   border-top: none;
   border-right: none;
   border-left: none;
-  border-bottom: 2px solid #97b91b;
-  border-left: 2px solid #97b91b;
-  border-right: 2px solid #97b91b;
+  border-bottom: 2px solid #b8e027;
+  border-left: 2px solid #b8e027;
+  border-right: 2px solid #b8e027;
   outline: 0;
 }
 
@@ -1428,7 +1428,7 @@ input[type=checkbox] {
   width: 20px;
   height: 20px;
   background-color: transparent;
-  border: 2px solid #97b91b;
+  border: 2px solid #b8e027;
 }
 
 input:checked ~ .check-style {
@@ -1502,12 +1502,12 @@ input:checked ~ .check-style {
 
 .footer__widgetsarea,
 .body__footer {
-  border-top: 4px solid #e15b00;
+  border-top: 4px solid #ff7415;
   padding: 4em 15px;
 }
 
 .body__footer {
-  border-top: 4px solid #e15b00;
+  border-top: 4px solid #ff7415;
   padding: 4em 15px 0;
 }
 
