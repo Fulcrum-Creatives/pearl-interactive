@@ -242,19 +242,13 @@ function my_gform_enqueue_scripts($form, $is_ajax=false){?>
     </script>
 <?php
 }
-/* Print Queries
+
+/* GravityForms remove tabbed index
 ================================================================================*/
-function printQueries() { 
-  global $wpdb; 
-
-  if (defined('SAVEQUERIES') && SAVEQUERIES===true) { 
-  	echo '<hr />';
-    echo 'SAVEQUERIES was set properly so we can get the queries.<br>';
-    echo 'We found ' . $wpdb->num_queries . ' query(-ies)!<br>';
-    echo '<pre>'; print_r($wpdb->queries); echo '</pre>';
-  } 
-  else 
-    echo 'SAVEQUERIES was not set. Please update your wp-config.php!';
+function gform_tabindexer( $tab_index, $form = false ) {
+    $starting_index = 1000; // if you need a higher tabindex, update this number
+    if( $form )
+        add_filter( 'gform_tabindex_' . $form['id'], 'gform_tabindexer' );
+    return GFCommon::$tab_index >= $starting_index ? GFCommon::$tab_index : $starting_index;
 }
-
-//add_action('wp_footer','printQueries',99999);
+add_filter( 'gform_tabindex', 'gform_tabindexer', 10, 2 );
