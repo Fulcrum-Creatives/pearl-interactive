@@ -67,6 +67,9 @@ if( !function_exists( 'fcwpf_load_stylesheets' ) ) :
 		wp_enqueue_style( 'google-fonts', 'http://fonts.googleapis.com/css?family=Roboto:400,700,500|Roboto+Slab:400,7…' );
 		// Font Awesome
 		wp_enqueue_style( 'fonts-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css' ); 
+		if( filesize( get_template_directory() . '/css/quickfix.css' ) != 0 ) {
+	        wp_enqueue_style( 'ohw-qf', get_template_directory_uri() . '/css/quickfix.css', array(), '1.0.0', 'all' );
+	    }
 	}
 	add_action( 'wp_enqueue_scripts', 'fcwpf_load_stylesheets' );
 endif;
@@ -157,29 +160,26 @@ endif;
 /* Sidebar Widget Area
 ===============================================================================*/
 function register_custom_sidebars() {
-    if( ! function_exists( register_sidebar() ) ) {
-        register_sidebar( array(
-            'name'          => __( 'Sidebar', FCWPF_TAXDOMAIN ),
-            'id'            => 'sidebar',
-            'description'   => '',
-            'class'         => '',
-            'before_widget' => '<li id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</li>',
-            'before_title'  => '<h2 class="widgettitle">',
-            'after_title'   => '</h2>'
-        ));
-        register_sidebar( array(
-            'name'          => __( 'Footer', FCWPF_TAXDOMAIN ),
-            'id'            => 'footer',
-            'description'   => '',
-            'class'         => '',
-            'before_widget' => '<li id="%1$s" class="widget %2$s">',
-            'after_widget'  => '</li>',
-            'before_title'  => '<h2 class="widgettitle">',
-            'after_title'   => '</h2>'
-        ));
-        unregister_sidebar( 'sidebar-1' );
-    }
+    register_sidebar( array(
+        'name'          => __( 'Sidebar', FCWPF_TAXDOMAIN ),
+        'id'            => 'sidebar',
+        'description'   => '',
+        'class'         => '',
+        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</li>',
+        'before_title'  => '<h2 class="widgettitle">',
+        'after_title'   => '</h2>'
+    ));
+    register_sidebar( array(
+        'name'          => __( 'Footer', FCWPF_TAXDOMAIN ),
+        'id'            => 'footer',
+        'description'   => '',
+        'class'         => '',
+        'before_widget' => '<li id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</li>',
+        'before_title'  => '<h2 class="widgettitle">',
+        'after_title'   => '</h2>'
+    ));
 }
 add_action( 'widgets_init', 'register_custom_sidebars' );
 
